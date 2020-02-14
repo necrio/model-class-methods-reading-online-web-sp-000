@@ -2,6 +2,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if !params[:author].blank?
+  @posts = Post.by_author(params[:author])
+elsif !params[:date].blank?
   end
 
   def show
